@@ -16,8 +16,24 @@ import * as React from "react";
 import Footer from "./Footer.react";
 import Header from "./Header.react";
 import MainSection from "./MainSection.react";
+import {Context}  from "almin";
 
-class TodoApp extends React.Component {
+declare type StateMap<T> = {
+    [P in keyof T]: T[P];
+};
+
+export interface TodoAppProps {
+  appContext: Context<StateMap<{ "todoState": any; }>>;
+  filterType: string;
+};
+
+export interface TodoAppState {
+    todoState: any;
+};
+
+class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
+    releaseChange: any;
+
     constructor(props) {
         super(props);
         const appContext = props.appContext;

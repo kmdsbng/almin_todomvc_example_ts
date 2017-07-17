@@ -24,6 +24,8 @@ class Header extends React.Component {
                     id="new-todo"
                     placeholder="What needs to be done?"
                     onSave={this._onSave}
+                    value={null}
+                    className={null}
                 />
             </header>
         );

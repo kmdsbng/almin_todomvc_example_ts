@@ -8,23 +8,24 @@
  */
 
 import * as React from "react";
-//const PropTypes = require("prop-types");
-const ReactPropTypes = PropTypes;
 const ENTER_KEY_CODE = 13;
 
 declare type StateMap<T> = {
     [P in keyof T]: T[P];
 };
 
-export interface TodoTextInputPropsProps {
+export interface TodoTextInputProps {
   className: string,
   id: string;
   placeholder: string;
-  onSave: (text: string) => any;
+  onSave: (text: any) => void;
   value: string
 };
 
-export default class TodoTextInput extends React.Component<TodoTextInputProps, undefined> {
+export interface TodoTextInputState {
+};
+
+export default class TodoTextInput extends React.Component<TodoTextInputProps, TodoTextInputState> {
     //static propTypes = {
     //    className: ReactPropTypes.string,
     //    id: ReactPropTypes.string,

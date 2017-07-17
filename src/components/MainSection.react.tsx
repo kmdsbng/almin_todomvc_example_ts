@@ -14,7 +14,16 @@ import AppLocator from "../AppLocator";
 import {ToggleAllTodoItemFactory} from "../usecase/ToggleAllTodoItems";
 import TodoItem from "./TodoItem.react";
 
-class MainSection extends React.Component {
+export interface MainSectionProps {
+  allTodos: any;
+  areAllComplete: any;
+};
+
+export interface MainSectionState {
+    todoState: any;
+};
+
+class MainSection extends React.Component<MainSectionProps, MainSectionState> {
     static propTypes = {
         allTodos: ReactPropTypes.array.isRequired,
         areAllComplete: ReactPropTypes.bool.isRequired

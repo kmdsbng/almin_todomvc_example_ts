@@ -15,8 +15,18 @@ import AppLocator from "../AppLocator";
 import {RemoveTodoItemFactory} from "../usecase/RemoveAllCompletedItems";
 import {FilterTodoListFactory} from "../usecase/FilterTodoList";
 import {FilterTypes} from "../store/TodoStore/TodoState";
+import TodoItem from "../domain/TodoList/TodoItem";
 
-class Footer extends React.Component {
+export interface FooterProps {
+  allTodos: Array<TodoItem>;
+  filterType: string;
+};
+
+export interface FooterState {
+};
+
+
+class Footer extends React.Component<FooterProps, FooterState> {
     static propTypes = {
         allTodos: ReactPropTypes.array.isRequired
     };

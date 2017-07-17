@@ -17,7 +17,15 @@ import {ToggleTodoItemFactory} from "../usecase/ToggleTodoItem";
 import {RemoveTodoItemFactory} from "../usecase/RemoveTodoItem";
 import TodoTextInput from "./TodoTextInput.react";
 
-class TodoItem extends React.Component {
+
+export interface TodoItemProps {
+  todo: any;
+};
+
+export interface TodoItemState {
+};
+
+class TodoItem extends React.Component<TodoItemProps, TodoItemState> {
     static propTypes = {
         todo: ReactPropTypes.object.isRequired
     };

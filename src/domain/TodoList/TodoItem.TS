@@ -1,6 +1,10 @@
 "use strict";
 const uuid = require("uuid");
 export default class TodoItem {
+    completed: boolean;
+    title: string;
+    id: string;
+
     constructor({
         id,
         title,
@@ -12,6 +16,6 @@ export default class TodoItem {
     }
 
     updateItem(updated) {
-        return new TodoItem(Object.assign({}, this, updated));
+        return new TodoItem((<any>Object).assign({}, this, updated));
     }
 }
