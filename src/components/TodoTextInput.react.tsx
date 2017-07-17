@@ -7,19 +7,35 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-const React = require("react");
-const PropTypes = require("prop-types");
+import * as React from "react";
+//const PropTypes = require("prop-types");
 const ReactPropTypes = PropTypes;
 const ENTER_KEY_CODE = 13;
 
-class TodoTextInput extends React.Component {
-    static propTypes = {
-        className: ReactPropTypes.string,
-        id: ReactPropTypes.string,
-        placeholder: ReactPropTypes.string,
-        onSave: ReactPropTypes.func.isRequired,
-        value: ReactPropTypes.string
-    };
+declare type StateMap<T> = {
+    [P in keyof T]: T[P];
+};
+
+export interface TodoTextInputPropsProps {
+  className: string,
+  id: string;
+  placeholder: string;
+  onSave: (text: string) => any;
+  value: string
+};
+
+export default class TodoTextInput extends React.Component<TodoTextInputProps, undefined> {
+    //static propTypes = {
+    //    className: ReactPropTypes.string,
+    //    id: ReactPropTypes.string,
+    //    placeholder: ReactPropTypes.string,
+    //    onSave: ReactPropTypes.func.isRequired,
+    //    value: ReactPropTypes.string
+    //};
+
+    constructor(props) {
+      super(props);
+    }
 
     state = {
         value: this.props.value || ""
@@ -73,4 +89,3 @@ class TodoTextInput extends React.Component {
     };
 }
 
-export default TodoTextInput;

@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-const React = require("react");
+import * as React from "react";
 const PropTypes = require("prop-types");
 const ReactPropTypes = PropTypes;
 const classNames = require("classnames");

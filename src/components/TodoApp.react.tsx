@@ -12,7 +12,7 @@
  * the TodoStore and passes the new data to its children.
  */
 
-const React = require("react");
+import * as React from "react";
 import Footer from "./Footer.react";
 import Header from "./Header.react";
 import MainSection from "./MainSection.react";

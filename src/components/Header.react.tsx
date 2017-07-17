@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-const React = require("react");
+import * as React from "react";
 import AppLocator from "../AppLocator";
 import {AddTodoItemFactory} from "../usecase/AddTodoItem";
 import TodoTextInput from "./TodoTextInput.react";

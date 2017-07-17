@@ -1,9 +1,10 @@
 "use strict";
-const EventEmitter = require("events");
+import {EventEmitter} from "typescript.events";
 const REPOSITORY_CHANGE = "REPOSITORY_CHANGE";
 import TodoList from "../domain/TodoList/TodoList";
 import MemoryDB from "./adpter/MemoryDB";
 // Collection repository
+
 export class TodoListRepository extends EventEmitter {
     constructor(database = new MemoryDB()) {
         super();

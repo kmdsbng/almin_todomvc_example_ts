@@ -1,8 +1,12 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./src/index.js",
-    devtool: process.env.WEBPACK_DEVTOOL || "source-map",
+    entry: "./src/index.tsx",
+    devtool: "source-map",
+    resolve: {
+        // Add '.ts' and '.tsx' as resolvable extensions.
+        extensions: [".ts", ".tsx", ".js", ".json"]
+    },
     output: {
         path: path.join(__dirname, "public", "build"),
         publicPath: "/build/",
@@ -10,14 +14,9 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
-                options: {
-                    cacheDirectory: true
-                }
-            }
+            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
     }
+
 };

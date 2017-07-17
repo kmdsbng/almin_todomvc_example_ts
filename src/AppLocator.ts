@@ -1,6 +1,15 @@
 // LICENSE : MIT
 "use strict";
+
+import {Context}  from "almin";
+
+declare type StateMap<T> = {
+    [P in keyof T]: T[P];
+};
+
 export class AppContextLocator {
+    _context : Context<StateMap<{ "todoState": any; }>>;
+
     constructor() {
         /**
          * @type {Context}
