@@ -11,7 +11,7 @@ export class UpdateTodoItemTitleFactory {
 
 export class UpdateTodoItemTitleUseCase extends UseCase {
     todoListRepository: TodoListRepository;
-    
+
     /**
      * @param {TodoListRepository} todoListRepository
      */
