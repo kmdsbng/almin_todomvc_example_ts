@@ -10,6 +10,8 @@ export class RemoveTodoItemFactory {
 }
 
 export class RemoveTodoItemUseCase extends UseCase {
+    todoListRepository: TodoListRepository;
+    
     /**
      * @param {TodoListRepository} todoListRepository
      */

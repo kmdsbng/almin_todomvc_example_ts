@@ -5,6 +5,8 @@ const assert = require("assert");
  This is not iterable.
  */
 export default class MapLike {
+    _store: object;
+
     constructor(entries = []) {
         this._store = Object.create(null);
         entries.forEach(entry => {

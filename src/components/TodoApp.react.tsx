@@ -24,7 +24,7 @@ declare type StateMap<T> = {
 
 export interface TodoAppProps {
   appContext: Context<StateMap<{ "todoState": any; }>>;
-  filterType: string;
+  filterType?: string;
 };
 
 export interface TodoAppState {

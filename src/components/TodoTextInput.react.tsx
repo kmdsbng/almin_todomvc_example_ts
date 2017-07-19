@@ -16,8 +16,8 @@ declare type StateMap<T> = {
 
 export interface TodoTextInputProps {
   className: string,
-  id: string;
-  placeholder: string;
+  id?: string;
+  placeholder?: string;
   onSave: (text: any) => void;
   value: string
 };

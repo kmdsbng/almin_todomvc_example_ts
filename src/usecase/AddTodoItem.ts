@@ -11,6 +11,8 @@ export class AddTodoItemFactory {
 }
 
 export class AddTodoItemUseCase extends UseCase {
+    todoListRepository: TodoListRepository;
+
     /**
      * @param {TodoListRepository} todoListRepository
      */
@@ -23,7 +25,7 @@ export class AddTodoItemUseCase extends UseCase {
         // Get todoList from repository
         const todoList = this.todoListRepository.lastUsed();
         // Create TodoItem
-        const todoItem = new TodoItem({title});
+        const todoItem = new TodoItem({title, id: null, completed: false});
         // Add TodoItem
         todoList.addItem(todoItem);
         // Save todoList to  repository

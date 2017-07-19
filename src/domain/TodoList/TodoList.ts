@@ -3,6 +3,9 @@ const uuid = require("uuid");
 const assert = require("assert");
 import TodoItem from "./TodoItem";
 export default class TodoList {
+    id: string;
+    _items: any;
+
     constructor() {
         this.id = uuid.v1();
         /**

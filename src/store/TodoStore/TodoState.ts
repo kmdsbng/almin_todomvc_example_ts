@@ -7,6 +7,9 @@ export const FilterTypes = {
 };
 
 export default class TodoState {
+    items: any;
+    filterType: any;
+
     /**
      * @param {TodoItem[]} items
      * @param {string} filterType

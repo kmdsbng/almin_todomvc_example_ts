@@ -10,7 +10,7 @@ import AppStoreGroup from "./store/AppStoreGroup";
 import {CreateDomainUseCaseFactory} from "./usecase/CreateDomainUseCase";
 // context
 import {Context, Dispatcher}  from "almin";
-import AlminLogger from "almin-logger";
+//import AlminLogger from "almin-logger";
 // instances
 const dispatcher = new Dispatcher();
 // context connect dispatch with stores
@@ -19,8 +19,8 @@ const appContext = new Context({
     store: AppStoreGroup.create()
 });
 // start logger
-const logger = new AlminLogger();
-logger.startLogging(appContext);
+//const logger = new AlminLogger();
+//logger.startLogging(appContext);
 // Singleton
 AppLocator.context = appContext;
 // initialize domain

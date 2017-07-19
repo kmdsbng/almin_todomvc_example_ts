@@ -10,6 +10,8 @@ export class ToggleTodoItemFactory {
 }
 
 export class ToggleTodoItemUseCase extends UseCase {
+    todoListRepository: TodoListRepository;
+
     /**
      * @param {TodoListRepository} todoListRepository
      */

@@ -2,6 +2,8 @@
 import { Store } from "almin";
 import TodoState, { FilterTypes } from "./TodoState";
 export default class TodoStore extends Store {
+    todoListRepository: any;
+    
     /**
      * @param {TodoListRepository} todoListRepository
      */
