@@ -1,5 +1,6 @@
 "use strict";
 import { FilterTodoListUseCase } from "../../usecase/FilterTodoList";
+import TodoItem from "../../domain/TodoList/TodoItem";
 export const FilterTypes = {
     ALL_TODOS: "ALL_TODOS",
     ACTIVE_TODOS: "ACTIVE_TODOS",
@@ -7,8 +8,8 @@ export const FilterTypes = {
 };
 
 export default class TodoState {
-    items: any;
-    filterType: any;
+    items: Array<TodoItem>;
+    filterType: string;
 
     /**
      * @param {TodoItem[]} items
